@@ -1,0 +1,2 @@
+# weather_information
+Slackに1時間おきに気象情報や天気予報を投稿するボット
