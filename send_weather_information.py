@@ -97,10 +97,10 @@ def weather_forecast():
         #メッセージを作成
         message+=str(time.hour)+":00 天気: "+weather+", 気温: "+str(temp)
 
-        #降水確率があったらそれを追記
+        #降水量があったらそれを追記
         if "rain" in L[i]:
             if "3h" in L[i]["rain"]:
-                message+=", 降水確率: "+str(100*L[i]["rain"]["3h"])+"%"
+                message+=", 降水量: "+str(Decimal(str(L[i]["rain"]["3h"]/3)).quantize(Decimal("0.1"),rounding=ROUND_HALF_UP))+"mm"
 
         if i!=3:
             message+="\n"
